@@ -1,4 +1,3 @@
-
 -- Insertar datos en la tabla Tipos_Identificacion
 INSERT INTO Tipos_Identificacion (Nombre_Tipo_Identificacion) VALUES ('Cédula de ciudadanía');
 INSERT INTO Tipos_Identificacion (Nombre_Tipo_Identificacion) VALUES ('Cédula de extranjería');
@@ -12,19 +11,19 @@ INSERT INTO Tipos_Identificacion (Nombre_Tipo_Identificacion) VALUES ('Numero de
 INSERT INTO Tipos_Persona (Nombre_Tipo_Persona) VALUES ('Persona Natural');
 INSERT INTO Tipos_Persona (Nombre_Tipo_Persona) VALUES ('Persona Juridica');
 
---Insertar datos en la tabla Tipos_Solicitud
+-- Insertar datos en la tabla Tipos_Solicitud
 INSERT INTO tipos_solicitud (nombre_tipo_solicitud) values ('Peticion');
 INSERT INTO tipos_solicitud (nombre_tipo_solicitud) values ('Queja');
 INSERT INTO tipos_solicitud (nombre_tipo_solicitud) values ('Reclamo');
 INSERT INTO tipos_solicitud (nombre_tipo_solicitud) values ('Sugerencia');
 
---Insertar datos en la tabla estados_solicitud
-INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Pendiente')
-INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Finalizado')
-INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Rechazado')
-INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Cancelado')
+-- Insertar datos en la tabla estados_solicitud
+INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Pendiente');
+INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Finalizado');
+INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Rechazado');
+INSERT INTO estados_solicitud(nombre_estado_solicitud) values ('Cancelado');
 
---Insertar Datos en la tabla Dependencias
+-- Insertar Datos en la tabla Dependencias
 INSERT INTO dependencias (nombre_dependencia) values ('Secretaria de Salud');
 INSERT INTO dependencias (nombre_dependencia) values ('Secretaria de Educación');
 INSERT INTO dependencias (nombre_dependencia) values ('Secretaria de Gobierno');
@@ -32,7 +31,7 @@ INSERT INTO dependencias (nombre_dependencia) values ('Dirección Financiera');
 INSERT INTO dependencias (nombre_dependencia) values ('Secretaria de Planeación');
 INSERT INTO dependencias (nombre_dependencia) values ('UMATA');
 
---Insertar Datos en la tabla Categorias
+-- Insertar Datos en la tabla Categorias
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (1,'Salud publica');
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (1,'afiliación');
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (1,'infraestructura hospitalaria');
@@ -54,15 +53,8 @@ INSERT INTO categorias (id_dependencia, nombre_categoria) values (5,'Gestión de
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (6,'Asistencia técnica');
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (6,'medio ambiente');
 
--- Insertar datos en la tabla Personas
-INSERT INTO Personas (ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES (1, 'Juan', 'Pérez', 'juan@example.com', 1, 123456789);
-INSERT INTO Personas (ID_Tipo_Persona, Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES (2, 'María', 'López', 'maria@example.com', 2, 987654321);
-INSERT INTO Personas (ID_Tipo_Persona, Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES (1, 'Ana', 'García', 'ana@example.com', 1, 987654321);
-INSERT INTO Personas (ID_Tipo_Persona, Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES (2, 'Pedro', 'Martínez', 'pedro@example.com', 2, 123456789);
-
 -- Insertar datos en la tabla Usuarios
-INSERT INTO Usuarios (Usuario, Contraseña, ID_Persona, ID_Rol, Estado_Usuario) VALUES ('juan', 'contraseña123', 1, 1,'Activo');
-INSERT INTO Usuarios (Usuario, Contraseña, ID_Persona, ID_Rol , Estado_Usuario) VALUES ('maria', '123', 2, 2,'Activo');
-INSERT INTO Usuarios (Usuario, Contraseña, ID_Persona, ID_Rol, Estado_Usuario) VALUES ('ana', 'clave123', 3, 2,'Activo');
-INSERT INTO Usuarios (Usuario, Contraseña, ID_Persona, ID_Rol, Estado_Usuario) VALUES ('pedro', '123', 4, 1,'Activo');
-
+INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('juan', 'contraseña123', 1,'Activo',1, 'Juan', 'Pérez', 'juan@example.com', 1, 123456789);
+INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('maria', '123', 2,'Activo', 2, 'María', 'López', 'maria@example.com', 2, 987654321 );
+INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('ana', 'clave123', 0,'Activo', 1,'Ana', 'García', 'ana@example.com', 1, 98765432133);
+INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('pedro', '123',1,'Activo', 2, 'Pedro', 'Martínez', 'pedro@example.com', 2, 1234567890);

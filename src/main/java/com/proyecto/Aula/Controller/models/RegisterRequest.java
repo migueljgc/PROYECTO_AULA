@@ -2,6 +2,7 @@ package com.proyecto.Aula.Controller.models;
 
 import com.proyecto.Aula.Persistence.Entity.IdentificationType;
 import com.proyecto.Aula.Persistence.Entity.PersonType;
+import com.proyecto.Aula.Persistence.Entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,5 +24,6 @@ public class RegisterRequest {
     private IdentificationType identificationType;
     private BigInteger identificationNumber;
     private String stateUser;
+    private Role role;
 
 }

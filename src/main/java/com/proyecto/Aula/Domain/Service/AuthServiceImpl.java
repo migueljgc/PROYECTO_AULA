@@ -33,14 +33,14 @@ public class AuthServiceImpl implements AuthService {
                 .name(request.getName())
                 .lastName(request.getLastName())
                 .email(request.getEmail())
-                .stateUser(request.getStateUser())
+                .stateUser("ACTIVO")
                 .identificationType(request.getIdentificationType())
                 .identificationNumber(request.getIdentificationNumber())
                 .personType(request.getPersonType())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();
-        userRepository.save(user);
+
         var jwtToken = jwtService.genereteToken((UserDetails) user);
         return AuthResponse.builder()
                 .token(jwtToken).build();
@@ -65,4 +65,25 @@ public class AuthServiceImpl implements AuthService {
                 .authorities(roles)
                 .build();
     }
+
+
+    public AuthResponse registerAd(RegisterRequest request) {
+        var user = User.builder()
+                .user(request.getUser())
+                .name(request.getName())
+                .lastName(request.getLastName())
+                .email(request.getEmail())
+                .stateUser("EN_ESPERA")
+                .identificationType(request.getIdentificationType())
+                .identificationNumber(request.getIdentificationNumber())
+                .personType(request.getPersonType())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(request.getRole())
+                .build();
+        userRepository.save(user);
+        var jwtToken = jwtService.genereteToken((UserDetails) user);
+        return AuthResponse.builder()
+                .token(jwtToken).build();
+    }
 }
+

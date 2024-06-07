@@ -42,7 +42,7 @@ public class User  implements UserDetails {
     @Column(name = "Apellido_Persona")
     private String lastName;
 
-    @Column(name = "Correo_Persona")
+    @Column(name = "Correo_Persona", unique = true)
     private String email;
 
     @JoinColumn(name = "ID_Tipo_Identificacion")
@@ -52,6 +52,11 @@ public class User  implements UserDetails {
     @Column(name = "Numero_Identificacion_Persona", unique = true)
     private BigInteger identificationNumber;
 
+    @Column(name = "Token_Verificacion")
+    private String verificationToken;
+
+    @ManyToOne @JoinColumn(name = "ID_Dependencia")
+    private Dependence dependence;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "Rol")
@@ -59,6 +64,8 @@ public class User  implements UserDetails {
 
     @Column(name = "Estado_Usuario")
     private String stateUser;
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -7,4 +7,5 @@ import com.proyecto.Aula.Controller.models.RegisterRequest;
 public interface AuthService {
     AuthResponse register (RegisterRequest Request );
     AuthResponse authenticate (AuthenticationRequest Request );
+
 }

@@ -20,6 +20,7 @@ public class AulaApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 						.allowedMethods("POST", "GET", "DELETE", "OPTIONS", "PUT");
+
 			}
 		};
 	}
