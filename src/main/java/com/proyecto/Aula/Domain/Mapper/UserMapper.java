@@ -18,6 +18,7 @@ public class UserMapper {
         user.setIdentificationType(userDTO.getIdentificationType());
         user.setLastName(userDTO.getLastName());
         user.setPersonType(userDTO.getPersonType());
+        user.setDependence(userDTO.getDependence());
         return user;
     }
 
@@ -33,6 +34,7 @@ public class UserMapper {
         userDTO.setIdentificationType(user.getIdentificationType());
         userDTO.setLastName(user.getLastName());
         userDTO.setPersonType(user.getPersonType());
+        userDTO.setDependence(user.getDependence());
         return userDTO;
     }
 

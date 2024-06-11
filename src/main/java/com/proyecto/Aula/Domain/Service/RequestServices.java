@@ -34,4 +34,13 @@ public List<RequestDTO> getAll() {
     public Optional<RequestDTO> findById(Long id) {
         return requestRepository.findById(id).map(RequestMapper::toDTO);
     }
+
+    public void update(RequestDTO requestDTO) {
+    Request request = RequestMapper.toEntity(requestDTO);
+    requestRepository.save(request);
+    }
+
+    public boolean existsById(Long id) {
+    return requestRepository.existsById(id);
+    }
 }

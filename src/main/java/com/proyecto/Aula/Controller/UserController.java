@@ -1,5 +1,6 @@
 package com.proyecto.Aula.Controller;
 
+import com.proyecto.Aula.Domain.Dto.RequestDTO;
 import com.proyecto.Aula.Domain.Dto.UserDTO;
 import com.proyecto.Aula.Domain.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +23,12 @@ public class UserController {
         return userService.getAll();
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@RequestBody UserDTO userDTO) {
-        Optional<UserDTO> userOptional = userService.findById(userDTO.getId());
-        if(userOptional.isPresent()) {
-            userService.save(userDTO);
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody UserDTO userDTO) {
+        if(userService.existsById(id)) {
+            userDTO.setId(id);
+            userService.update(userDTO);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.notFound().build();

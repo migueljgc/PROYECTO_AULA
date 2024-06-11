@@ -30,6 +30,7 @@ INSERT INTO dependencias (nombre_dependencia) values ('Secretaria de Gobierno');
 INSERT INTO dependencias (nombre_dependencia) values ('Dirección Financiera');
 INSERT INTO dependencias (nombre_dependencia) values ('Secretaria de Planeación');
 INSERT INTO dependencias (nombre_dependencia) values ('UMATA');
+INSERT INTO dependencias (nombre_dependencia) values ('N\A');
 
 -- Insertar Datos en la tabla Categorias
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (1,'Salud publica');
@@ -52,9 +53,3 @@ INSERT INTO categorias (id_dependencia, nombre_categoria) values (5,'Certificado
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (5,'Gestión del riesgo');
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (6,'Asistencia técnica');
 INSERT INTO categorias (id_dependencia, nombre_categoria) values (6,'medio ambiente');
-
--- Insertar datos en la tabla Usuarios
-INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('juan', 'contraseña123', 1,'Activo',1, 'Juan', 'Pérez', 'juan@example.com', 1, 123456789);
-INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('maria', '123', 2,'Activo', 2, 'María', 'López', 'maria@example.com', 2, 987654321 );
-INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('ana', 'clave123', 0,'Activo', 1,'Ana', 'García', 'ana@example.com', 1, 98765432133);
-INSERT INTO Usuarios (Usuario, Contraseña, rol, Estado_Usuario, ID_Tipo_Persona,Nombre_Persona, Apellido_Persona, Correo_Persona, ID_Tipo_Identificacion, Numero_Identificacion_Persona) VALUES ('pedro', '123',1,'Activo', 2, 'Pedro', 'Martínez', 'pedro@example.com', 2, 1234567890);

@@ -52,8 +52,6 @@ public class User  implements UserDetails {
     @Column(name = "Numero_Identificacion_Persona", unique = true)
     private BigInteger identificationNumber;
 
-    @Column(name = "Token_Verificacion")
-    private String verificationToken;
 
     @ManyToOne @JoinColumn(name = "ID_Dependencia")
     private Dependence dependence;

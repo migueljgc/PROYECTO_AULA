@@ -14,6 +14,7 @@ public class UserDTO {
     private Role role;
     private String stateUser;
     private PersonType personType;
+    private Dependence dependence;
     private String name;
     private String lastName;
     private String email;

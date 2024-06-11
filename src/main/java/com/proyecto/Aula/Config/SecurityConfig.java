@@ -43,6 +43,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
                 new AntPathRequestMatcher("/api/auth/authenticate"),
         new AntPathRequestMatcher("/api/identification_type/get"),
         new AntPathRequestMatcher("/api/person_type/get")
+
         );
     }
 

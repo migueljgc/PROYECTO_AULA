@@ -1,5 +1,6 @@
 package com.proyecto.Aula.Controller.models;
 
+import com.proyecto.Aula.Persistence.Entity.Dependence;
 import com.proyecto.Aula.Persistence.Entity.IdentificationType;
 import com.proyecto.Aula.Persistence.Entity.PersonType;
 import com.proyecto.Aula.Persistence.Entity.Role;
@@ -25,5 +26,6 @@ public class RegisterRequest {
     private BigInteger identificationNumber;
     private String stateUser;
     private Role role;
+    private Dependence dependence;
 
 }

@@ -39,8 +39,9 @@ public class AuthServiceImpl implements AuthService {
                 .personType(request.getPersonType())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
+                .dependence(request.getDependence())
                 .build();
-
+        userRepository.save(user);
         var jwtToken = jwtService.genereteToken((UserDetails) user);
         return AuthResponse.builder()
                 .token(jwtToken).build();
@@ -73,12 +74,32 @@ public class AuthServiceImpl implements AuthService {
                 .name(request.getName())
                 .lastName(request.getLastName())
                 .email(request.getEmail())
-                .stateUser("EN_ESPERA")
+                .stateUser("ACTIVO")
                 .identificationType(request.getIdentificationType())
                 .identificationNumber(request.getIdentificationNumber())
                 .personType(request.getPersonType())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole())
+                .dependence(request.getDependence())
+                .build();
+        userRepository.save(user);
+        var jwtToken = jwtService.genereteToken((UserDetails) user);
+        return AuthResponse.builder()
+                .token(jwtToken).build();
+    }
+    public AuthResponse registerSe(RegisterRequest request) {
+        var user = User.builder()
+                .user(request.getUser())
+                .name(request.getName())
+                .lastName(request.getLastName())
+                .email(request.getEmail())
+                .stateUser("ACTIVO")
+                .identificationType(request.getIdentificationType())
+                .identificationNumber(request.getIdentificationNumber())
+                .personType(request.getPersonType())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(Role.SECRE)
+                .dependence(request.getDependence())
                 .build();
         userRepository.save(user);
         var jwtToken = jwtService.genereteToken((UserDetails) user);

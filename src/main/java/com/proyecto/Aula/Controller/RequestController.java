@@ -27,11 +27,11 @@ public class RequestController {
     @GetMapping("/get")
     public List<RequestDTO> get(){return requestServices.getAll();}
 
-    @PutMapping("/update")
-    public ResponseEntity<?> update(@RequestBody RequestDTO requestDTO) {
-        Optional<RequestDTO> requestDTOOptional = requestServices.findById(requestDTO.getIdRequest());
-        if(requestDTOOptional.isPresent()) {
-            requestServices.save(requestDTO);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody RequestDTO requestDTO) {
+        if(requestServices.existsById(id)) {
+            requestDTO.setIdRequest(id);
+            requestServices.update(requestDTO);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.notFound().build();
